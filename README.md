@@ -15,7 +15,7 @@ https://github.com/hotarumarueng/gen-ai-visual-prompt の README を読んで、
 
 あとは Claude が質問しながら進める。聞かれるのは「どこに入れるか」くらいで、パスワードやトークンを聞かれることはない。
 
-このリポジトリは非公開なので、読む権限のある GitHub アカウントで、その端末の git か gh にログインしていることが前提になる。
+公開リポジトリなので、GitHub のアカウントやログインは要らない。端末に git か gh が入っていれば導入できる。
 
 ## Claude への導入手順
 
@@ -57,7 +57,7 @@ https://github.com/hotarumarueng/gen-ai-visual-prompt の README を読んで、
 
 - gh があれば：`gh repo clone hotarumarueng/gen-ai-visual-prompt <一時フォルダ>/repo`
 - gh が無ければ：`git clone --depth 1 https://github.com/hotarumarueng/gen-ai-visual-prompt.git <一時フォルダ>/repo`
-- 認証で失敗したら：相手に「このリポジトリを読める GitHub アカウントでのログインが要る」と伝え、持ち主に招待を頼むか、`gh auth login` をブラウザで済ませてもらう。トークンを貼らせない。
+- 取得に失敗したら：表示されたエラーを相手に伝える。社内ネットワークの制限などで GitHub に届かない環境があるので、その場合は相手か管理者に確かめてもらう。ログイン情報やトークンを貼らせない。
 
 終わりの条件：`<一時フォルダ>/repo/SKILL.md` と `<一時フォルダ>/repo/references/` の10ファイルがある。
 
@@ -65,7 +65,7 @@ https://github.com/hotarumarueng/gen-ai-visual-prompt の README を読んで、
 
 写すのは `SKILL.md` と `references/` だけ。`README.md`・`.gitignore`・`.git/` は写さない。写したあと、ファイルごとにハッシュ（sha256）を比べる。
 
-**書き込みが拒否されたとき**（組織のポリシーで `.claude/` 配下への書き込みが止められている環境がある）：
+**書き込みが拒否されたとき**は、次のとおりにする。組織のポリシーで `.claude/` 配下への書き込みが止められている環境がある。
 
 - 迂回しない。作業フォルダを `cd` でずらす、別のシェルや別のコマンドに言い換える、といった方法で通そうとしない。ポリシーを意図的に外すことになるため。
 - 代わりに相手の手で写してもらう。Claude は書き込める場所（一時フォルダ）に、「コピーとハッシュ照合をまとめたスクリプト」を書き、相手には実行の1行だけを渡す。
@@ -98,7 +98,10 @@ https://github.com/hotarumarueng/gen-ai-visual-prompt の README を読んで、
 git clone https://github.com/hotarumarueng/gen-ai-visual-prompt.git
 ```
 
-取得したフォルダから `SKILL.md` と `references/` を `~/.claude/skills/gen-ai-visual-prompt/`（自分用）か `<プロジェクト>/.claude/skills/gen-ai-visual-prompt/`（プロジェクト用）に写す。Claude Code の新しいセッションから使える。
+取得したフォルダから `SKILL.md` と `references/` を、次のどちらかに写す。Claude Code の新しいセッションから使える。
+
+- 自分用：`~/.claude/skills/gen-ai-visual-prompt/`
+- プロジェクト用：`<プロジェクト>/.claude/skills/gen-ai-visual-prompt/`
 
 ## 何をするか
 
