@@ -1,0 +1,85 @@
+# このリポジトリが配るのは SKILL.md・references/・README.md・.gitignore だけ。
+# それ以外が紛れ込まないように、要らなくなるものと危険なものを広く止める。
+
+# --- 秘密情報（鍵・トークン・環境変数） ---
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa*
+id_ed25519*
+*credentials*
+*secret*
+*token*
+.npmrc
+.netrc
+
+# --- AI エージェントの手元設定・作業記録（個人の許可設定やパスが入る） ---
+.claude/
+.codex/
+.agents/
+CLAUDE.local.md
+*.jsonl
+
+# --- OS・同期ツールが作るファイル（作業環境の手がかりになる） ---
+Thumbs.db
+ehthumbs.db
+desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+*.lnk
+.boxsync
+*.boxnote
+
+# --- エディタ・IDE ---
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.history/
+
+# --- Office・ドキュメントの一時ファイル ---
+~$*
+*.tmp
+
+# --- 試しに出した生成物・作業用の置き場 ---
+out/
+output/
+outputs/
+tmp/
+temp/
+scratch/
+scratchpad/
+samples-local/
+*.mp4
+*.mov
+*.webm
+*.gif
+
+# --- バックアップ・差分の残り ---
+*.bak
+*.bak_*
+*.orig
+*.rej
+*.old
+
+# --- 配布用に固めたもの・依存物 ---
+*.zip
+*.tar
+*.tar.gz
+*.7z
+dist/
+node_modules/
+__pycache__/
+*.pyc
+.venv/
+
+# --- ログ ---
+*.log
+logs/
